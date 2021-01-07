@@ -6,4 +6,4 @@
 *Insert Class Diagram here*  
 
 ## Summary
-*Include a brief summary that describes your system that your are modelling*
+The system that is being modelled is Spotify. It can do basic functionality such as save a song, podcast, and album. It will print the details of these based on what was inputted by the user.

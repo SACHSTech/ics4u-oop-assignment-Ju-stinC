@@ -2,13 +2,15 @@ import java.io.*;
 
 public class Main {
 
-  public static void main(String[] args) throws IOException{
+  public static void main(String[] args) throws IOException {
 
-    User u = new User();
     SavedSong s = new SavedSong();
-    SavedPodcast p = new SavedPodcast();
+    SavedPodcast p = new SavedPodcast(); 
+    SavedAlbum a = new SavedAlbum(s);
+    User u = new User(s, p, a);
 
     System.out.println("Welcome to Spotify!");
+    System.out.println();
 
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
@@ -25,6 +27,10 @@ public class Main {
 
     System.out.println("These are the details of your account: ");
     u.getAccountDetails();
+    System.out.println();
+
+    System.out.print("Space on this account is limited, meaning you can only save one (1) song, podcast, and album.");
+    System.out.println();
     System.out.println();
 
     System.out.print("Would you like to save a song? (y for yes/n for no): ");
@@ -94,19 +100,61 @@ public class Main {
       System.out.print("What year did this podcast start/release?: ");
       p.setReleaseYear(Integer.parseInt(keyboard.readLine()));
 
+      System.out.println();
+      System.out.println("These are the details of the podcast you saved: ");
+      System.out.println();
+
+      System.out.println("Podcast name: " + p.name);
+      System.out.println("Artist/Creator: " + p.artist);
+      System.out.println("Amount of episodes: " + p.getEpisodeCount());
+      System.out.println("Average length of an episode: " + p.length);
+      System.out.println("Desciription: " + p.getPodcastDescription());
+      System.out.println("Release Year: " + p.releaseYear);    
+      System.out.println();
+
+
     }
 
-    System.out.println();
-    System.out.println("These are the details of the podcast you saved: ");
-    System.out.println();
+    System.out.print("Would you like to save an album? (y for yes/n for no): ");
+    s.setChoice(keyboard.readLine());
 
-    System.out.println("Podcast name: " + p.name);
-    System.out.println("Artist/Creator: " + p.artist);
-    System.out.println("Amount of episodes: " + p.getEpisodeCount());
-    System.out.println("Average length of an episode: " + p.length);
-    System.out.println("Desciription: " + p.getPodcastDescription());
-    System.out.println("Release Year: " + p.releaseYear);    
-    System.out.println();
+    if(s.getChoice().equals("y")) {
+
+      System.out.print("Enter the name of the album: ");
+      s.setName(keyboard.readLine());
+
+      System.out.print("Enter the artist of this album: ");
+      s.setArtist(keyboard.readLine());
+
+      System.out.print("How many songs are in this album?: ");
+      a.setSongInAlbumCount(Integer.parseInt(keyboard.readLine()));
+
+      System.out.print("How long is this album? (in hours): ");
+      a.setAlbumHoursCount(Integer.parseInt(keyboard.readLine()));
+
+      System.out.print("How long is this album? (in minutes): ");
+      a.setAlbumMinsCount(Integer.parseInt(keyboard.readLine()));
+
+      System.out.print("What year did this album release?: ");
+      s.setReleaseYear(Integer.parseInt(keyboard.readLine()));
+
+      System.out.println();
+      System.out.println("These are the details of the album you saved: ");
+      System.out.println();
+
+      System.out.println("Album name: " + s.name);
+      System.out.println("Artist/Creator: " + s.artist);
+      System.out.println("Amount of songs in this album: " + a.getSongInAlbumCount());
+      System.out.println("Hours in album: " + a.getAlbumHoursCount());
+      System.out.println("Minutes in album: " + a.getAlbumMinsCount());
+      System.out.println("Release Year: " + s.releaseYear);    
+      System.out.println();
+
+      System.out.print("Thanks for using Spotify.");
+
+    }
+
+  System.out.print("Thanks for using Spotify.");
 
   }
 

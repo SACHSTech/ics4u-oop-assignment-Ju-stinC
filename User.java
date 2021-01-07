@@ -7,6 +7,18 @@ public class User {
   private int followingCount;
   private int followerCount;
 
+  SavedSong savedSong;
+  SavedPodcast savedPod;
+  SavedAlbum savedAlbum;
+
+  public User(SavedSong savedSongg, SavedPodcast savedPodd, SavedAlbum savedAlbumm) {
+
+    savedSong = savedSongg;
+    savedPod = savedPodd;
+    savedAlbum = savedAlbumm;
+
+  }
+
   public void setFirstName(String fName) {
 
     firstName = fName;
