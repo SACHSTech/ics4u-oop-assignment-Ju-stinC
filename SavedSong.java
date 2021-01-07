@@ -12,11 +12,20 @@ public class SavedSong {
   private String choice;
   private String featArtist;
 
+  /**
+  * @param yesOrNo which will take in y or n for whether or not they want to add a song, podcast, or album
+  * this is used many times throughout the program
+  */
+
   public void setChoice(String yesOrNo) {
 
     choice = yesOrNo;
   
   }
+
+  /** 
+  * @return choice which returns whichever choice they chose
+  */
 
   public String getChoice() {
 
@@ -24,11 +33,19 @@ public class SavedSong {
 
   }
 
+  /** 
+  * @param mainArtist which is the main artist who sings the song
+  */
+
   public void setArtist(String mainArtist) {
 
     artist = mainArtist;
 
   }
+
+  /**
+  * @return artist
+  */ 
 
   public String getArtist() {
 
@@ -72,6 +89,11 @@ public class SavedSong {
 
   }
 
+  /** 
+  * @param cleanChoice - is the song clean or not(y or n)
+  * @param cleanCheck - based on what they said changes this value. if y it will stay true, if n it will change to false
+  */
+
   public void setClean(String cleanChoice, boolean cleanCheck) {
 
     if(cleanChoice.equalsIgnoreCase("n")) {
@@ -83,6 +105,10 @@ public class SavedSong {
     }
 
   }
+
+  /**
+  * @return isClean - true or false 
+  */
 
   public boolean getClean() {
 
@@ -102,6 +128,11 @@ public class SavedSong {
 
   }
 
+  /**
+  * @param featuredArtist - is there a featured artist: y or n
+  * if there is, skip this but if there isn't then the featured artist will be displayed as "none" at the end
+  */
+
   public void setArtistFeature(String featuredArtist) {
 
     if(featuredArtist.equalsIgnoreCase("n")) {
@@ -113,6 +144,10 @@ public class SavedSong {
     artistFeature = featuredArtist;
 
   }
+
+  /** 
+  * @return artistFeature - whether or not there is a feature
+  */
 
   public String getArtistFeature() {
 
@@ -131,6 +166,10 @@ public class SavedSong {
     return featArtist;
 
   }
+
+  /**
+  * print the details of the song that the user just entered
+  */
 
   public void getSongDetails() {
 

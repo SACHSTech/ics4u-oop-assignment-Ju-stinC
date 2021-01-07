@@ -107,7 +107,7 @@ public class User {
   }
 
   /** 
-  * after they enter their details, this method will print
+  * after they enter their details, this method will print them
   */
 
   public void getAccountDetails() {
