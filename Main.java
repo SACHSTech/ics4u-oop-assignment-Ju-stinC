@@ -6,6 +6,7 @@ public class Main {
 
     User u = new User();
     SavedSong s = new SavedSong();
+    SavedPodcast p = new SavedPodcast();
 
     System.out.println("Welcome to Spotify!");
 
@@ -27,18 +28,18 @@ public class Main {
     System.out.println();
 
     System.out.print("Would you like to save a song? (y for yes/n for no): ");
-    s.setSongChoice(keyboard.readLine());
+    s.setChoice(keyboard.readLine());
 
-    if(s.getSongChoice().equals("y")) {
+    if(s.getChoice().equals("y")) {
 
       System.out.print("Enter the name of the artist: ");
       s.setArtist(keyboard.readLine());
 
-      System.out.print("Enter the title of the song you want to save: ");
-      s.setSongTitle(keyboard.readLine());
+      System.out.print("Enter the name of the song you want to save: ");
+      s.setName(keyboard.readLine());
 
       System.out.print("Enter the length of this song (in seconds): ");
-      s.setSongLength(Integer.parseInt(keyboard.readLine()));
+      s.setLength(Integer.parseInt(keyboard.readLine()));
 
       System.out.print("How many plays does this song have?: ");
       s.setPlaysCount(Integer.parseInt(keyboard.readLine()));
@@ -69,6 +70,43 @@ public class Main {
       System.out.println();
 
     }
+
+    System.out.print("Would you like to save a podcast? (y for yes/n for no): ");
+    p.setChoice(keyboard.readLine());
+
+    if(p.getChoice().equals("y")) {
+
+      System.out.print("Enter the name of the podcast: ");
+      p.setName(keyboard.readLine());
+
+      System.out.print("Enter the creator of this podcast: ");
+      p.setArtist(keyboard.readLine());
+
+      System.out.print("How many episodes are in this podcast?: ");
+      p.setEpisodeCount(Integer.parseInt(keyboard.readLine()));
+
+      System.out.print("Enter the average length of an episode (in minutes): ");
+      p.setLength(Integer.parseInt(keyboard.readLine()));
+
+      System.out.print("Enter a brief description of this podcast: ");
+      p.setPodcastDescription(keyboard.readLine());
+
+      System.out.print("What year did this podcast start/release?: ");
+      p.setReleaseYear(Integer.parseInt(keyboard.readLine()));
+
+    }
+
+    System.out.println();
+    System.out.println("These are the details of the podcast you saved: ");
+    System.out.println();
+
+    System.out.println("Podcast name: " + p.name);
+    System.out.println("Artist/Creator: " + p.artist);
+    System.out.println("Amount of episodes: " + p.getEpisodeCount());
+    System.out.println("Average length of an episode: " + p.length);
+    System.out.println("Desciription: " + p.getPodcastDescription());
+    System.out.println("Release Year: " + p.releaseYear);    
+    System.out.println();
 
   }
 

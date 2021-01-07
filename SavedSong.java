@@ -2,25 +2,25 @@ import java.io.*;
 
 public class SavedSong {
 
-  private String artist;
-  private int length;
+  public String artist;
+  public int length;
   private int playsCount;
-  private String title;
+  public String name;
   private boolean isClean = true;
-  private int releaseYear;
+  public int releaseYear;
   private String artistFeature;
-  private String songChoice;
+  private String choice;
   private String featArtist;
 
-  public void setSongChoice(String songYesOrNo) {
+  public void setChoice(String yesOrNo) {
 
-    songChoice = songYesOrNo;
+    choice = yesOrNo;
   
   }
 
-  public String getSongChoice() {
+  public String getChoice() {
 
-    return songChoice;
+    return choice;
 
   }
 
@@ -36,25 +36,25 @@ public class SavedSong {
 
   }
 
-  public void setSongTitle(String songTitle) {
+  public void setName(String songName) {
 
-    title = songTitle;
-
-  }
-
-  public String getSongTitle() {
-
-    return title;
+    name = songName;
 
   }
 
-  public void setSongLength(int songLength) {
+  public String getName() {
+
+    return name;
+
+  }
+
+  public void setLength(int songLength) {
 
     length = songLength;
 
   }
 
-  public int getSongLength() {
+  public int getLength() {
 
     return length;
 
